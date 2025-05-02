@@ -19,7 +19,6 @@ set hlsearch
 " Enable smartcase search sensitivity "
 set ignorecase
 set smartcase
-
 " indentation using sapces "
 " tabstops: 	width of tab caracter
 " soft tabstop: fine tunes the amount of whitespace to be added
@@ -47,10 +46,28 @@ autocmd BufWritePre *.for :%s/\s\+$//e
 " xterm_clipboard active "
 set clipboard=unnamedplus
 
+
 " Call the .vimrc.plug file
 if filereadable(expand("~/.vimrc.plug"))
     source ~/.vimrc.plug
 endif
+
+" ligthline.vim Settings
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " NERDTree Settings
 " Start NERDTree and leave the cursor in it.
