@@ -1,0 +1,23 @@
+call plug#begin('~/.vim/plugged')
+
+" --- Core ---
+Plug 'tpope/vim-fugitive'          " Git integration
+Plug 'itchyny/lightline.vim'       " Statusline
+
+" --- File Explorer ---
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin' " Git status inside NERDTree
+
+" --- Editing Helpers ---
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" --- Python ---
+Plug 'dense-analysis/ale'          " Linting / fixing (flake8, black, etc.)
+Plug 'Vimjas/vim-python-pep8-indent'
+
+" --- Ruby ---
+Plug 'vim-ruby/vim-ruby'
+
+call plug#end()
