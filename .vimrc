@@ -52,8 +52,9 @@ autocmd BufWritePre *.for  :%s/\s\+$//e
 
 " --- Undo / Backup ---
 set undofile
-set backup
-set writebackup
+set nobackup       " disables backup files
+set nowritebackup  " disables writing a backup before saving
+set noswapfile     " disables swap files
 
 " ============================
 " Load vim-plug plugins
@@ -100,4 +101,3 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " --- AutoPairs ---
 let g:AutoPairsMapCR = 0
-
